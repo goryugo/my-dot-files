@@ -332,7 +332,7 @@
      ;; 好きなキーへバインド
      (global-set-key "\C-xM" 'clmemo)
 ;;changelogタイトル補完
-(setq clmemo-title-list '("makata" "mankees" "log" "idea" "perl" "unix" "shell" "emacs"))
+(setq clmemo-title-list '("makata" "mankee" "log" "idea" "perl" "unix" "shell" "emacs"))
 (setq clmemo-time-string-with-weekday 't)
 ;;clgrep
 (autoload 'clgrep "clgrep" "ChangeLog grep." t)
