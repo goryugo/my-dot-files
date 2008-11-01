@@ -1,3 +1,7 @@
 [user]
 	email = goryugo33@gmail.com
 	name = Ryusuke Goto
+[color]
+	diff = auto
+	status = auto
+	branch = auto

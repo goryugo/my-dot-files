@@ -1,9 +1,3 @@
-;;migemo 英語が検索できなくなったぞ？
-;; (setq migemo-command "migemo"
-;;       migemo-options '("-t" "emacs"  "-i" "¥a"))
-;; (setenv "RUBYLIB" "/Applications/Emacs.app/Contents/Resources/lib/ruby/site_ruby/")
-;; (require 'migemo)
-
 ;;elisp load-path
 (setq load-path
       (append
@@ -19,6 +13,21 @@
 ;;;;;;;;;;;;;;;;;;;;
 ;;テスト中の機能
 ;;;;;;;;;;;;;;;;;;;;
+;;日付挿入
+(defun my-get-date-gen (form)
+  (insert (format-time-string form)))
+(defun my-get-date ()
+  (interactive)
+  (my-get-date-gen "[%Y-%m-%d]"))
+(defun my-get-time ()
+  (interactive)
+  (my-get-date-gen "%H:%M"))
+(defun my-get-dtime ()
+  (interactive)
+  (my-get-date-gen "[%Y-%m-%d %H:%M]"))
+(global-set-key "\C-c\C-d" 'my-get-date)
+(global-set-key "\C-c\C-t" 'my-get-time)
+(global-set-key "\C-c\ed" 'my-get-dtime)
 
 ;;ファイルを開く時に，カーソルキーだけで，ファイルを選択
 ;;カーソル上下で従来のヒストリ。ctrl+P,ctrl+nでファイル名補完
@@ -46,14 +55,6 @@
 ;;   (if (frame-parameter nil 'fullscreen)
 ;;       (set-frame-parameter nil 'fullscreen nil)
 ;;     (set-frame-parameter nil 'fullscreen 'fullboth)))
-
-;; Carbon Emacsの設定で入れられた. メニューを隠したり．
-(custom-set-variables
- '(display-time-mode t)
- '(tool-bar-mode nil)
- '(transient-mark-mode t))
-(custom-set-faces
- )
 
 ;; anything
 (require 'anything)
@@ -151,6 +152,14 @@
 ;;;;;;;;;;;;;;;;;;;;
 ;;その他設定
 ;;;;;;;;;;;;;;;;;;;;
+
+;; Carbon Emacsの設定で入れられた. メニューを隠したり．
+(custom-set-variables
+ '(display-time-mode t)
+ '(tool-bar-mode nil)
+ '(transient-mark-mode t))
+(custom-set-faces
+ )
 
 ;;font
 (if (eq window-system 'mac)
@@ -327,7 +336,7 @@
 (setq user-full-name "Ryusuke Goto")
 (setq user-mail-address "goryugo33@gmail.com")
      (autoload 'clmemo "clmemo" "ChangeLog memo mode." t)
-     ;; あなたの ChangeLog メモファイルへのパス
+     ;;ChangeLog メモファイルへのパス
      (setq clmemo-file-name "~/Dropbox/clmemo.txt")
      ;; 好きなキーへバインド
      (global-set-key "\C-xM" 'clmemo)
