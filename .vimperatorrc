@@ -1,0 +1,30 @@
+" 1.2 (created: 2008/08/16 18:51:52)
+" Mappings
+set titlestring=Firefox
+
+" Options
+set guioptions=b
+
+" Abbreviations
+source! ~/.vimperatorrc.local
+" vim: set ft=vimperator:
+
+"ビープ音を鳴らさずビジュアルベルを使用
+set visualbell
+"ビジュアルベルを無効化
+set visualbellstyle=display:none;
+
+"j/kの移動量を5倍に
+map j 5<C-e>
+map k 5<C-y>
+"<BS>で「戻る」
+map <BS> H
+
+"<A-Left>/<A-Right>かh/lでタブ移動
+map <A-Left> <C-p>
+map <A-Right> <C-n>
+map h <C-p>
+map l <C-n>
+
+"ページ全体で検索語を強調表示
+set hlsearch
