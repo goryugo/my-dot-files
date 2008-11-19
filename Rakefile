@@ -3,7 +3,7 @@ HOME = ENV["HOME"]
 CURRENT = Dir.pwd
  
 Dir.chdir HOME
-dotfiles = FileList[".emacs.el",".zshrc",".gitconfig"]
+dotfiles = FileList[".emacs.el",".zshrc",".gitconfig",".vimperatorrc"]
 dotfiles.exclude(/\.$/,
 /history$/,
                  ".ssh",

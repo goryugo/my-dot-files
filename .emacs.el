@@ -59,6 +59,8 @@
 ;; anything
 (require 'anything)
 (require 'anything-config)
+(require 'recentf)
+(recentf-mode 1)
 (setq anything-idle-delay 0.3)
 (setq anything-input-idle-delay 0.2) 
 (setq anything-sources (list anything-c-source-buffers

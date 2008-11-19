@@ -3,7 +3,7 @@
 set titlestring=Firefox
 
 " Options
-set guioptions=b
+set guioptions=mbT
 
 " Abbreviations
 source! ~/.vimperatorrc.local
@@ -20,11 +20,39 @@ map k 5<C-y>
 "<BS>で「戻る」
 map <BS> H
 
-"<A-Left>/<A-Right>かh/lでタブ移動
-map <A-Left> <C-p>
-map <A-Right> <C-n>
-map h <C-p>
-map l <C-n>
+"h/lでタブ移動
+noremap h <C-p>
+noremap l <C-n>
 
 "ページ全体で検索語を強調表示
 set hlsearch
+
+"quickmark
+qmark g http://gmail.com
+qmark r http://www.google.com/reader/view/
+qmark f http://fastladder.com/reader/
+qmark n http://nicovideo.jp
+
+" コマンドモードでの操作
+cmap <C-n> <Tab>
+cmap <C-p> <S-Tab>
+cmap <C-f> <Right>
+cmap <C-b> <Left>
+
+" Alt+↑/↓でメニューの表示/非表示
+map <A-Down> :set guioptions+=mbT<CR>
+map <A-Up> :set guioptions-=mbT<CR>
+
+" Exコマンドと検索パターン履歴の記録数
+set history=3000
+
+" ex mode でインクリメント補完
+set wildoptions=auto
+
+" feedSomeKeys.js
+autocmd LocationChange .* :fmapc
+autocmd LocationChange reader\.livedoor\.com/reader fmaps j k s a p o v c t g <Space> <S-Space> z b < >
+autocmd LocationChange fastladder\.com/reader fmaps j k s a p o v c t g <Space> <S-Space> z b < >
+autocmd LocationChange mail\.google\.com/mail fmaps -d 4 c / j k n p o u e x s r a y # [ ] z ? gi gs gt gd ga gc
+"↓動かん
+"autocmd LocationChange www\.google\.com/reader/view/ fmaps -d j k n p o gt gs v <Enter> <S-n> <S-p> <S-a> <S-o> <S-x>
