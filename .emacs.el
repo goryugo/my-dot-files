@@ -13,6 +13,24 @@
 ;;;;;;;;;;;;;;;;;;;;
 ;;テスト中の機能
 ;;;;;;;;;;;;;;;;;;;;
+;; 参考 http://d.hatena.ne.jp/k12u/20081118/p1
+;;  (global-set-key [S-right] 'split-window-horizontally)
+;;  (global-set-key [S-left] 'split-window-horizontally)
+;;  (define-key global-map [S-up] 'split-window-vertically)
+;;  (define-key global-map [S-down] 'delete-other-windows)
+ 
+;;  (global-set-key [right] 'windmove-right)
+;;  (global-set-key [left] 'windmove-left)
+;;  (define-key global-map [up] 'windmove-up)
+;;  (define-key global-map [down] 'windmove-down) 
+ 
+;;  (global-set-key [C-backspace] 'switch-to-buffer)
+;;  (global-set-key [C-delete] '(lambda() (interactive)(kill-buffer (buffer-name)))) 
+ 
+;;  (global-set-key [C-right] 'elscreen-next)
+;;  (global-set-key [C-left] 'elscreen-previous)
+ 
+;;  (global-set-key [C-return] 'find-file)
 ;;日付挿入
 (defun my-get-date-gen (form)
   (insert (format-time-string form)))
