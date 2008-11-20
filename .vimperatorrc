@@ -27,7 +27,7 @@ noremap l <C-n>
 "ページ全体で検索語を強調表示
 set hlsearch
 
-"quickmark
+" quickmark
 qmark g http://gmail.com
 qmark r http://www.google.com/reader/view/
 qmark f http://fastladder.com/reader/
@@ -49,10 +49,41 @@ set history=3000
 " ex mode でインクリメント補完
 set wildoptions=auto
 
-" feedSomeKeys.js
+" addon
+" sbmCommentviewer
+map <C-v> :viewSBMComments<CR>
+
+"feedSomeKeys.js
 autocmd LocationChange .* :fmapc
-autocmd LocationChange reader\.livedoor\.com/reader fmaps j k s a p o v c t g <Space> <S-Space> z b < >
-autocmd LocationChange fastladder\.com/reader fmaps j k s a p o v c t g <Space> <S-Space> z b < >
-autocmd LocationChange mail\.google\.com/mail fmaps -d 4 c / j k n p o u e x s r a y # [ ] z ? gi gs gt gd ga gc
-"↓動かん
-"autocmd LocationChange www\.google\.com/reader/view/ fmaps -d j k n p o gt gs v <Enter> <S-n> <S-p> <S-a> <S-o> <S-x>
+autocmd LocationChange reader\.livedoor\.com/reader :fmap j k s a p o v c t g <Space> <S-Space> z b < >
+autocmd LocationChange fastladder\.com/reader :fmap j k s a p o v c t g <Space> <S-Space> z b < >
+autocmd LocationChange mail\.google\.com/mail :fmap -depth 4 c / j k n p o u e x s r a y # [ ] z ? gi gs gt gd ga gc
+autocmd LocationChange www\.google\.com/reader :fmap! -vkey j k n p m s t v A r S N P X O gh ga gs gt gu u / ?
+
+" multi request
+javascript <<EOM
+liberator.globalVariables.multi_requester_siteinfo = [
+    {
+        name:        'wikipedia-ja',                             // required
+   	description: 'Wikipedia(ja)',                        // required
+        url:         'http://ja.wikipedia.org/wiki/%s',         // required, %s <-- replace string
+        xpath:       'id("bodyContent")/p[1]',                            // optional(default all)
+        srcEncode:   '',                      // optional(default UTF-8)
+        urlEncode:   '',                      // optional(default srcEncode)
+        ignoreTags:  'img'                             // optional(default script), syntax 'tag1,tag
+    },
+];
+EOM
+
+" copy.js
+javascript <<EOM
+liberator.globalVariables.copy_templates = [
+   { label: 'anchor',         value: '[%URL%:title=%TITLE%]' },
+   { label: 'anchor',         value: '[%URL%:title=%TITLE%]' },
+ ];
+EOM
+
+" direct bookmark
+let g:direct_sbm_use_services_by_tag = "hdl" 
+let g:direct_sbm_use_services_by_post = "hdlgp"
+
