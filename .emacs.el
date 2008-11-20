@@ -303,7 +303,7 @@
 (defvar my-ignore-blst             ; 移動の際に無視するバッファのリスト
   '("*Help*" "*Compile-Log*" "*Mew completions*" "*Completions*"
     "*Shell Command Output*" "*Apropos*" "*Buffer List*" "*GNU Emacs*"
-    ".howm-keys" "*Messages*" "*SimpleHatena*" ".howm-history"))
+    ".howm-keys" "*Messages*" "*SimpleHatena*" ".howm-history" "*anything*"))
 (defvar my-visible-blst nil)       ; 移動開始時の buffer list を保存
 (defvar my-bslen 15)               ; buffer list 中の buffer name の最大長
 (defvar my-blist-display-time 10)   ; buffer list の表示時間
