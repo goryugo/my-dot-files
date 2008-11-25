@@ -9,6 +9,9 @@ set guioptions=mbT
 source! ~/.vimperatorrc.local
 " vim: set ft=vimperator:
 
+"色
+colorscheme mac
+
 "ビープ音を鳴らさずビジュアルベルを使用
 set visualbell
 "ビジュアルベルを無効化

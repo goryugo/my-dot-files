@@ -13,6 +13,48 @@
 ;;;;;;;;;;;;;;;;;;;;
 ;;テスト中の機能
 ;;;;;;;;;;;;;;;;;;;;
+;;outputz named by mode
+(defun outputz-percent-encode (str &optional coding-system)                                                                  
+  (if (or (null coding-system)                                                                                               
+            (not (coding-system-p coding-system)))                                                                           
+      (setq coding-system 'utf-8))                                                                                           
+  (mapconcat                                                                                                                 
+   (lambda (c)                                                                                                               
+     (cond                                                                                                                   
+      ((outputz-url-reserved-p c)                                                                                            
+       (char-to-string c))                                                                                                   
+      ((eq c ? ) "+")                                                                                                        
+      (t (format "%%%x" c))))                                                                                                
+   (encode-coding-string str coding-system)                                                                                  
+   ""))                                                                                                                      
+                                                                                                                             
+(defun outputz-url-reserved-p (ch)                                                                                           
+  (or (and (<= ?A ch) (<= ch ?z))                                                                                            
+      (and (<= ?0 ch) (<= ch ?9))                                                                                            
+      (eq ?. ch)                                                                                                             
+      (eq ?- ch)                                                                                                             
+      (eq ?_ ch)                                                                                                             
+      (eq ?~ ch)))    
+
+(require 'outputz)
+(setq outputz-key "Qmsui6T1NDTC")   ;; 復活の呪文
+(setq outputz-base-uri                                                                                                       
+      (concat "http://" (user-login-name) "." (system-name) ".emacs.jp/"))
+(setq outputz-uri outputz-base-uri)                                                                                          
+                                                                                                                             
+(defadvice outputz (before outputz-setup-uri)                                                                                
+  (setq outputz-uri                                                                                                          
+        (outputz-percent-encode                                                                                              
+         (concat outputz-base-uri                                                                                            
+                 (symbol-name major-mode) "/"                                                                                
+                 (file-name-nondirectory (or (buffer-file-name) (buffer-name)))))))                                          
+                                                                                                                             
+(ad-activate-regexp "outputz-setup-uri") 
+(global-outputz-mode t)
+
+;; auto complete
+(require 'auto-complete)
+(global-auto-complete-mode t)
 ;; 参考 http://d.hatena.ne.jp/k12u/20081118/p1
 ;;  (global-set-key [S-right] 'split-window-horizontally)
 ;;  (global-set-key [S-left] 'split-window-horizontally)
@@ -167,6 +209,9 @@
 
 ;;simple hatena mode
 (require 'simple-hatena-mode)
+(add-hook 'simple-hatena-mode-hook
+'(lambda ()
+　 (outputz-mode)))
 (setq simple-hatena-default-id "goryugo")
 
 ;;;;;;;;;;;;;;;;;;;;
