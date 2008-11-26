@@ -10,7 +10,16 @@ source! ~/.vimperatorrc.local
 " vim: set ft=vimperator:
 
 "色
-colorscheme mac
+"colorscheme mac
+
+"キー補完 http://d.hatena.ne.jp/tor_ozaki/20081118/1227010697
+"1.  最初は履歴のみの候補
+"2. 2文字戻って検索も補完
+"3. /や.を含む文字を入力しても予め”.”が打ってあるのでurlと判断されることがない
+"   1. しかも検索時には"."はただの検索不可のごみになるので影響が出ない
+set complete=sl
+noremap o :o .<Space>
+noremap t :t .<Space>
 
 "ビープ音を鳴らさずビジュアルベルを使用
 set visualbell
@@ -35,6 +44,7 @@ qmark g http://gmail.com
 qmark r http://www.google.com/reader/view/
 qmark f http://fastladder.com/reader/
 qmark n http://nicovideo.jp
+qmark a https://www.google.com/analytics/settings/home
 
 " コマンドモードでの操作
 cmap <C-n> <Tab>
@@ -81,7 +91,6 @@ EOM
 " copy.js
 javascript <<EOM
 liberator.globalVariables.copy_templates = [
-   { label: 'anchor',         value: '[%URL%:title=%TITLE%]' },
    { label: 'anchor',         value: '[%URL%:title=%TITLE%]' },
  ];
 EOM
