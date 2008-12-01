@@ -71,22 +71,22 @@ autocmd LocationChange .* :fmapc
 autocmd LocationChange reader\.livedoor\.com/reader :fmap j k s a p o v c t g <Space> <S-Space> z b < >
 autocmd LocationChange fastladder\.com/reader :fmap j k s a p o v c t g <Space> <S-Space> z b < >
 autocmd LocationChange mail\.google\.com/mail :fmap -depth 4 c / j k n p o u e x s r a y # [ ] z ? gi gs gt gd ga gc
-autocmd LocationChange www\.google\.com/reader :fmap! -vkey j k n p m s t v A r S N P X O gh ga gs gt gu u / ?
+autocmd LocationChange www\.google\.com/reader :fmap! -vkey j k n p m s t v A r S N P X O gh ga gs gt gu u / ? <Space>
 
 " multi request
-javascript <<EOM
-liberator.globalVariables.multi_requester_siteinfo = [
-    {
-        name:        'wikipedia-ja',                             // required
-   	description: 'Wikipedia(ja)',                        // required
-        url:         'http://ja.wikipedia.org/wiki/%s',         // required, %s <-- replace string
-        xpath:       'id("bodyContent")/p[1]',                            // optional(default all)
-        srcEncode:   '',                      // optional(default UTF-8)
-        urlEncode:   '',                      // optional(default srcEncode)
-        ignoreTags:  'img'                             // optional(default script), syntax 'tag1,tag
-    },
-];
-EOM
+"javascript <<EOM
+"liberator.globalVariables.multi_requester_siteinfo = [
+"    {
+"        name:        'wikipedia-ja',                             // required
+"   	description: 'Wikipedia(ja)',                        // required
+"        url:         'http://ja.wikipedia.org/wiki/%s',         // required, %s <-- replace string
+"        xpath:       'id("bodyContent")/p[1]',                            // optional(default all)
+"        srcEncode:   '',                      // optional(default UTF-8)
+"        urlEncode:   '',                      // optional(default srcEncode)
+"        ignoreTags:  'img'                             // optional(default script), syntax 'tag1,tag
+"    },
+"];
+"EOM
 
 " copy.js
 javascript <<EOM
