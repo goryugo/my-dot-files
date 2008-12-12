@@ -44,7 +44,7 @@ qmark g http://gmail.com
 qmark r http://www.google.com/reader/view/
 qmark f http://fastladder.com/reader/
 qmark n http://nicovideo.jp
-qmark a https://www.google.com/analytics/settings/home
+qmark a http://www.amazon.co.jp/
 
 " コマンドモードでの操作
 cmap <C-n> <Tab>
@@ -64,7 +64,7 @@ set wildoptions=auto
 
 " addon
 " sbmCommentviewer
-map <C-v> :viewSBMComments<CR>
+map <C-s> :viewSBMComments<CR>
 
 "feedSomeKeys.js
 autocmd LocationChange .* :fmapc
