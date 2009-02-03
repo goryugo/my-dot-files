@@ -1,3 +1,4 @@
+
 ;;elisp load-path
 (setq load-path
       (append
@@ -13,6 +14,11 @@
 ;;;;;;;;;;;;;;;;;;;;
 ;;テスト中の機能
 ;;;;;;;;;;;;;;;;;;;;
+;;for git
+(require 'egg)
+;; Perl デバッガの設定
+(autoload 'perl-debug "perl-debug" nil t)
+(autoload 'perl-debug-lint "perl-debug" nil t)
 ;;outputz named by mode
 (defun outputz-percent-encode (str &optional coding-system)                                                                  
   (if (or (null coding-system)                                                                                               
@@ -279,7 +285,7 @@
              howm-list-grep howm-create
              howm-keyword-to-kill-ring))
 ;; howm directory
-(setq howm-directory "~/Dropbox/howm/")
+(setq howm-directory "/Volumes/ZumoDrive/howm/")
 
 ;; リンクを TAB で辿る
 (eval-after-load "howm-mode"
@@ -348,7 +354,8 @@
 (defvar my-ignore-blst             ; 移動の際に無視するバッファのリスト
   '("*Help*" "*Compile-Log*" "*Mew completions*" "*Completions*"
     "*Shell Command Output*" "*Apropos*" "*Buffer List*" "*GNU Emacs*"
-    ".howm-keys" "*Messages*" "*SimpleHatena*" ".howm-history" "*anything*"))
+    ".howm-keys" "*Messages*" "*SimpleHatena*" ".howm-history" "*anything*"
+    "*Egg:Select Action*" "*howmM:%menu%*"))
 (defvar my-visible-blst nil)       ; 移動開始時の buffer list を保存
 (defvar my-bslen 15)               ; buffer list 中の buffer name の最大長
 (defvar my-blist-display-time 10)   ; buffer list の表示時間
@@ -402,11 +409,11 @@
 (setq user-mail-address "goryugo33@gmail.com")
      (autoload 'clmemo "clmemo" "ChangeLog memo mode." t)
      ;;ChangeLog メモファイルへのパス
-     (setq clmemo-file-name "~/Dropbox/clmemo.txt")
+     (setq clmemo-file-name "/Volumes/ZumoDrive/clmemo.txt")
      ;; 好きなキーへバインド
      (global-set-key "\C-xM" 'clmemo)
 ;;changelogタイトル補完
-(setq clmemo-title-list '("makata" "mankee" "log" "idea" "perl" "unix" "shell" "emacs"))
+(setq clmemo-title-list '("makata" "mankee" "zundok" "log" "idea" "perl" "unix" "shell" "emacs"))
 (setq clmemo-time-string-with-weekday 't)
 ;;clgrep
 (autoload 'clgrep "clgrep" "ChangeLog grep." t)
