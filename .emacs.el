@@ -3,7 +3,7 @@
 (setq load-path
       (append
        (list
-       (expand-file-name "~/Dropbox/site-lisp/")
+       (expand-file-name "/Volumes/ZumoDrive/site-lisp/")
        )
        load-path))
 ;;migemo
