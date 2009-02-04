@@ -97,15 +97,15 @@
 
 ;;ファイルを開く時に，カーソルキーだけで，ファイルを選択
 ;;カーソル上下で従来のヒストリ。ctrl+P,ctrl+nでファイル名補完
-(require 'cycle-mini)
-(define-key minibuffer-local-map [up] 'previous-history-element)
-(define-key minibuffer-local-completion-map [up] 'previous-history-element)
-(define-key minibuffer-local-must-match-map [up] 'previous-history-element)
-(define-key minibuffer-local-ns-map [up] 'previous-history-element)
-(define-key minibuffer-local-ns-map [down] 'next-history-element)
-(define-key minibuffer-local-map [down] 'next-history-element)
-(define-key minibuffer-local-completion-map [down] 'next-history-element)
-(define-key minibuffer-local-must-match-map [down] 'next-history-element)
+;; (require 'cycle-mini)
+;; (define-key minibuffer-local-map [up] 'previous-history-element)
+;; (define-key minibuffer-local-completion-map [up] 'previous-history-element)
+;; (define-key minibuffer-local-must-match-map [up] 'previous-history-element)
+;; (define-key minibuffer-local-ns-map [up] 'previous-history-element)
+;; (define-key minibuffer-local-ns-map [down] 'next-history-element)
+;; (define-key minibuffer-local-map [down] 'next-history-element)
+;; (define-key minibuffer-local-completion-map [down] 'next-history-element)
+;; (define-key minibuffer-local-must-match-map [down] 'next-history-element)
 
 ;; ;;最大化
 ;; (when (eq window-system 'mac)
@@ -122,18 +122,22 @@
 ;;       (set-frame-parameter nil 'fullscreen nil)
 ;;     (set-frame-parameter nil 'fullscreen 'fullboth)))
 
+;;;;;;;;;;;;;;;;;;;;
 ;; anything
+;; 超便利
+;;;;;;;;;;;;;;;;;;;;
 (require 'anything)
 (require 'anything-config)
 (require 'recentf)
 (recentf-mode 1)
 (setq anything-idle-delay 0.3)
 (setq anything-input-idle-delay 0.2) 
-(setq anything-sources (list anything-c-source-buffers
-                             anything-c-source-bookmarks
-                             anything-c-source-recentf
-                             anything-c-source-file-name-history
-                             anything-c-source-locate))
+(setq anything-sources (list 
+			anything-c-source-recentf
+			anything-c-source-buffers
+			anything-c-source-bookmarks
+			anything-c-source-file-name-history
+			anything-c-source-locate))
 (define-key anything-map (kbd "C-p") 'anything-previous-line)
 (define-key anything-map (kbd "C-n") 'anything-next-line)
 (define-key anything-map (kbd "C-v") 'anything-next-source)
@@ -430,3 +434,34 @@
 (autoload 'clgrep-entry-nourl "clgrep" "ChangeLog grep entry except for url" t)
 (add-hook 'clmemo-mode-hook
           '(lambda () (define-key clmemo-mode-map "\C-c\C-g" 'clgrep)))
+
+
+
+(setq make-backup-files t)       ; バックアップファイルを作成する。
+;;; バックアップファイルの保存場所を指定。
+(setq backup-directory-alist
+      (cons (cons "\\.*$" (expand-file-name "~/Documents/bak"))
+            backup-directory-alist))
+
+(setq version-control t)     ; 複数のバックアップを残します。世代。
+(setq kept-new-versions 5)   ; 新しいものをいくつ残すか
+(setq kept-old-versions 5)   ; 古いものをいくつ残すか
+(setq delete-old-versions t) ; 確認せずに古いものを消す。
+(setq vc-make-backup-files t) ; バージョン管理下のファイルもバックアップを作る。
+
+;;;====================================
+;;;; シェルスクリプト保存時にchmod +x を自動実行する
+;;;====================================
+(defun make-file-executable ()
+  "Make the file of this buffer executable, when it is a script source."
+  (save-restriction
+    (widen)
+    (if (string= "#!" (buffer-substring-no-properties 1 (min 3 (point-max))))
+        (let ((name (buffer-file-name)))
+          (or (equal ?. (string-to-char (file-name-nondirectory name)))
+              (let ((mode (file-modes name)))
+                (set-file-modes name (logior mode (logand (/ mode 4) 73)))
+                (message (concat "Wrote " name " (+x)"))))))))
+(add-hook 'after-save-hook 'make-file-executable)
+
+

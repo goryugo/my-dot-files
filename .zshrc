@@ -65,7 +65,7 @@ setopt nolistbeep
 bindkey -e
 
 # historical backward/forward search with linehead string binded to ^P/^N
-#
+#コマンド入力中のC-p C-nでの履歴検索
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
@@ -78,10 +78,11 @@ bindkey "\\en" history-beginning-search-forward-end
 ## Command history configuration
 #
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-setopt hist_ignore_dups     # ignore duplication command history list
-setopt share_history        # share command history data
+HISTSIZE=20000
+SAVEHIST=20000
+setopt hist_ignore_all_dups hist_save_nodups # 重複削除
+setopt hist_ignore_dups     # ignore duplication command history listsetopt hist_reduce_blanks
+setopt share_history        # 履歴共有 share command history data
 
 
 ## Completion configuration
@@ -197,3 +198,5 @@ esac
 ## load user .zshrc configuration file
 #
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
+
+export GISTY_DIR="/Volumes/ZumoDrive/gists"
