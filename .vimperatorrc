@@ -96,6 +96,6 @@ liberator.globalVariables.copy_templates = [
 EOM
 
 " direct bookmark
-let g:direct_sbm_use_services_by_tag = "hdl" 
-let g:direct_sbm_use_services_by_post = "hdlgp"
+let g:direct_sbm_use_services_by_tag = "hd" 
+let g:direct_sbm_use_services_by_post = "hdgp"
 

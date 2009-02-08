@@ -435,8 +435,9 @@
 (add-hook 'clmemo-mode-hook
           '(lambda () (define-key clmemo-mode-map "\C-c\C-g" 'clgrep)))
 
-
-
+;;;;;;;;;;;;;;;;;;;;
+;;バックアップの作成
+;;;;;;;;;;;;;;;;;;;;
 (setq make-backup-files t)       ; バックアップファイルを作成する。
 ;;; バックアップファイルの保存場所を指定。
 (setq backup-directory-alist
