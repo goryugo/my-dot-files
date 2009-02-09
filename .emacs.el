@@ -1,4 +1,4 @@
-
+(set-default-coding-systems 'utf-8)
 ;;elisp load-path
 (setq load-path
       (append
