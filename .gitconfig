@@ -5,6 +5,3 @@
 	diff = auto
 	status = auto
 	branch = auto
-[github]
-	user = goryugo
-	token = 6b1fa575116374ffb794919febc450d3

@@ -43,8 +43,8 @@ set hlsearch
 qmark g http://gmail.com
 qmark r http://www.google.com/reader/view/
 qmark f http://fastladder.com/reader/
-qmark n http://nicovideo.jp
 qmark a http://www.amazon.co.jp/
+qmark h http://www.google.com/history/?hl=ja
 
 " コマンドモードでの操作
 cmap <C-n> <Tab>
@@ -96,6 +96,6 @@ liberator.globalVariables.copy_templates = [
 EOM
 
 " direct bookmark
-let g:direct_sbm_use_services_by_tag = "hd" 
-let g:direct_sbm_use_services_by_post = "hdgp"
+let g:direct_sbm_use_services_by_tag = "hdl" 
+let g:direct_sbm_use_services_by_post = "hdlgp"
 

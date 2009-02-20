@@ -3,13 +3,16 @@
 (setq load-path
       (append
        (list
-       (expand-file-name "/Volumes/ZumoDrive/site-lisp/")
+       (expand-file-name "~/Dropbox/site-lisp/")
        )
        load-path))
-;;migemo
-(load "migemo.el")
-(setq migemo-use-pattern-alist t)
-(setq migemo-use-frequent-pattern-alist t)
+;;migemo 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;あとで
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;(load "migemo.el")
+;;(setq migemo-use-pattern-alist t)
+;;(setq migemo-use-frequent-pattern-alist t)
 
 ;;;;;;;;;;;;;;;;;;;;
 ;;テスト中の機能
@@ -289,7 +292,7 @@
              howm-list-grep howm-create
              howm-keyword-to-kill-ring))
 ;; howm directory
-(setq howm-directory "/Volumes/ZumoDrive/howm/")
+(setq howm-directory "~/Dropbox/howm/")
 
 ;; リンクを TAB で辿る
 (eval-after-load "howm-mode"
@@ -413,7 +416,7 @@
 (setq user-mail-address "goryugo33@gmail.com")
      (autoload 'clmemo "clmemo" "ChangeLog memo mode." t)
      ;;ChangeLog メモファイルへのパス
-     (setq clmemo-file-name "/Volumes/ZumoDrive/clmemo.txt")
+     (setq clmemo-file-name "~/Dropbox/howm/clmemo.txt")
      ;; 好きなキーへバインド
      (global-set-key "\C-xM" 'clmemo)
 ;;changelogタイトル補完
@@ -441,7 +444,7 @@
 (setq make-backup-files t)       ; バックアップファイルを作成する。
 ;;; バックアップファイルの保存場所を指定。
 (setq backup-directory-alist
-      (cons (cons "\\.*$" (expand-file-name "~/Documents/bak"))
+      (cons (cons "\\.*$" (expand-file-name "~/Dropbox/bak"))
             backup-directory-alist))
 
 (setq version-control t)     ; 複数のバックアップを残します。世代。
