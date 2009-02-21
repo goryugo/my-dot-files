@@ -45,6 +45,7 @@ qmark r http://www.google.com/reader/view/
 qmark f http://fastladder.com/reader/
 qmark a http://www.amazon.co.jp/
 qmark h http://www.google.com/history/?hl=ja
+qmark d http://d.hatena.ne.jp/goryugo/
 
 " コマンドモードでの操作
 cmap <C-n> <Tab>
