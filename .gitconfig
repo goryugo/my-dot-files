@@ -1,7 +1,13 @@
 [user]
-	email = goryugo33@gmail.com
-	name = Ryusuke Goto
+    name = goryugo@iMac
+    email = goryugo33@gmail.com
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+  status = auto
+  diff = auto
+[pager]
+    color = true
+[status]
+    color = auto
+[github]
+	user = goryugo
+	token = 6b1fa575116374ffb794919febc450d3
