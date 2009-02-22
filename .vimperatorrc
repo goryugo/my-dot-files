@@ -67,6 +67,9 @@ set wildoptions=auto
 " sbmCommentviewer
 map <C-s> :viewSBMComments<CR>
 
+" sorcialbookmark with [ato]
+map <C-b> :sbm [ato]<CR>
+
 "feedSomeKeys.js
 autocmd LocationChange .* :fmapc
 autocmd LocationChange reader\.livedoor\.com/reader :fmap j k s a p o v c t g <Space> <S-Space> z b < >
