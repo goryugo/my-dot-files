@@ -156,6 +156,11 @@ freebsd*)
     ;;
 esac
 
+#my alias
+alias dot="cd ~/Dropbox/dot_files"
+alias cpan="sudo cpan"
+alias port="sudo port"
+alias diff="colordiff"
 
 ## terminal configuration
 #
@@ -199,4 +204,4 @@ esac
 #
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
 
-export GISTY_DIR="/Volumes/ZumoDrive/gists"
+export GISTY_DIR="$HOME/Dropbox/gists"
