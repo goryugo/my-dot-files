@@ -28,9 +28,9 @@ set visualbell
 "ビジュアルベルを無効化
 set visualbellstyle=display:none;
 
-"j/kの移動量を5倍に
-map j 5<C-e>
-map k 5<C-y>
+"j/kの移動量を3倍に
+map j 3<C-e>
+map k 3<C-y>
 "<BS>で「戻る」
 map <BS> H
 
@@ -48,6 +48,7 @@ qmark f http://fastladder.com/reader/
 qmark a http://www.amazon.co.jp/
 qmark h http://www.google.com/history/?hl=ja
 qmark d http://d.hatena.ne.jp/goryugo/
+qmark c http://www.drk7.jp/pub/js/cpanmala/
 
 " コマンドモードでの操作
 cmap <C-n> <Tab>
@@ -76,10 +77,10 @@ map <C-b> :sbm<CR>
 
 "feedSomeKeys.js
 autocmd LocationChange .* :fmapc
-autocmd LocationChange reader\.livedoor\.com/reader :fmap j k s a p o v c t g <Space> <S-Space> z b < >
-autocmd LocationChange fastladder\.com/reader :fmap j k s a p o v c t g <Space> <S-Space> z b < >
+autocmd LocationChange reader\.livedoor\.com/reader :fmap j k s a p o v c t g <Space> <S-Space> z  b< > t
+autocmd LocationChange fastladder\.com/reader :fmap j k s a p o v c t g <Space> <S-Space> z b < > t
 autocmd LocationChange mail\.google\.com/mail :fmap -depth 4 c / j k n p o u e x s r a y # [ ] z ? gi gs gt gd ga gc
-autocmd LocationChange www\.google\.com/reader :fmap! -vkey j k n p m s t v y cA r S N P X O gh ga gs gt gu u / ? <Space>
+autocmd LocationChange www\.google\.com/reader :fmap! -vkey j k n p m s t v y cA A r S N P X O gh ga gs gt gu u / ? <Space>
 
 " multi_requester.js
 "javascript <<EOM
@@ -104,7 +105,7 @@ liberator.globalVariables.copy_templates = [
 EOM
 
 " direct_bookmark.js
-let g:direct_sbm_use_services_by_tag = "hdl" 
-let g:direct_sbm_use_services_by_post = "hdlgp"
+let g:direct_sbm_use_services_by_tag = "hd"
+let g:direct_sbm_use_services_by_post = "hdgp"
 
 "char-hinsta-mod2.js

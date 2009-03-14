@@ -130,6 +130,10 @@ alias df="df -h"
 
 alias su="su -l"
 
+alias emacs="open -a /Applications/Emacs.app"
+alias vi="open -a /Applications/MacVim.app"
+alias vim="vi"
+
 case "${OSTYPE}" in
 darwin*)
     alias updateports="sudo port selfupdate; sudo port outdated"
