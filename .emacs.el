@@ -20,6 +20,11 @@
 ;;;;;;;;;;;;;;;;;;;;
 ;;テスト中の機能
 ;;;;;;;;;;;;;;;;;;;;
+;;tt-mode
+(autoload 'tt-mode "tt-mode")
+(setq auto-mode-alist
+ (append '(("\\.tt$" . tt-mode))  auto-mode-alist ))
+
 ;;for git
 (require 'egg)
 ;; Perl デバッガの設定
