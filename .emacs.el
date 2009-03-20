@@ -25,6 +25,18 @@
 (setq auto-mode-alist
  (append '(("\\.tt$" . tt-mode))  auto-mode-alist ))
 
+;;====================================
+;;; 折り返し表示ON/OFF
+;;====================================
+(defun toggle-truncate-lines ()
+  "折り返し表示をトグル動作します."
+  (interactive)
+  (if truncate-lines
+      (setq truncate-lines nil)
+    (setq truncate-lines t))
+  (recenter))
+(global-set-key "\C-c\C-l" 'toggle-truncate-lines) ; 折り返し表示ON/OFF
+
 ;;for git
 (require 'egg)
 ;; Perl デバッガの設定
