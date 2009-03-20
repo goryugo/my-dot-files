@@ -37,3 +37,14 @@ set showcmd
 augroup filetypedetect
 au BufNewFile,BufRead *.as  setf actionscript
 augroup END 
+
+if has('gui_macvim')
+  set showtabline=2  // タブを常に表示
+  set imdisable      // IMを無効化
+  set transparency=0 // 透明度を指定
+  set guifont=Monaco:h14
+  map <silent> gw :macaction selectNextWindow:
+  map <silent> gW :macaction selectPreviousWindow:
+  defaults write org.vim.MacVim MMTerminateAfterLastWindowClosed yes //最後のウィンドウを閉じたときに自動的にMacVimを終了
+  defaults write org.vim.MacVim MMOpenFilesInTabs yes //ファイルをドロップしたときにタブで開く
+endif
