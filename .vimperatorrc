@@ -30,6 +30,11 @@ map <BS> H
 noremap h <C-p>
 noremap l <C-n>
 
+"o tでURL開く bではてブ開く
+map o :o<Space>
+map t :t<Space>
+map b :hbt<Space>
+
 "ページ全体で検索語を強調表示
 "set hlsearch
 
