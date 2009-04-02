@@ -208,4 +208,4 @@ esac
 #
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
 
-export GISTY_DIR="$HOME/Dropbox/gists"
+export GISTY_DIR="$HOME/Dropbox/gists/gistnum"
