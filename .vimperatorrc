@@ -49,6 +49,7 @@ qmark a http://www.amazon.co.jp/
 qmark h http://www.google.com/history/?hl=ja
 qmark d http://d.hatena.ne.jp/goryugo/
 qmark c http://www.drk7.jp/pub/js/cpanmala/
+qmark l http://reader.livedoor.com/reader/
 
 " コマンドモードでの操作
 cmap <C-n> <Tab>
@@ -109,3 +110,6 @@ let g:direct_sbm_use_services_by_tag = "hd"
 let g:direct_sbm_use_services_by_post = "hdgp"
 
 "char-hinsta-mod2.js
+
+"hatena bookmark toolbar
+javascript liberator.loadScript('chrome://hatenabookmark/content/vimperator/plugin/hatenabookmark.js', {__proto__: this});
