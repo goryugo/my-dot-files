@@ -20,23 +20,6 @@
 ;;;;;;;;;;;;;;;;;;;;
 ;;テスト中の機能
 ;;;;;;;;;;;;;;;;;;;;
-;;tt-mode
-(autoload 'tt-mode "tt-mode")
-(setq auto-mode-alist
- (append '(("\\.tt$" . tt-mode))  auto-mode-alist ))
-
-;;====================================
-;;; 折り返し表示ON/OFF
-;;====================================
-(defun toggle-truncate-lines ()
-  "折り返し表示をトグル動作します."
-  (interactive)
-  (if truncate-lines
-      (setq truncate-lines nil)
-    (setq truncate-lines t))
-  (recenter))
-(global-set-key "\C-c\C-l" 'toggle-truncate-lines) ; 折り返し表示ON/OFF
-
 ;;for git
 (require 'egg)
 ;; Perl デバッガの設定
@@ -84,10 +67,66 @@
 ;; auto complete
 (require 'auto-complete)
 (global-auto-complete-mode t)
+;; 参考 http://d.hatena.ne.jp/k12u/20081118/p1
+;;  (global-set-key [S-right] 'split-window-horizontally)
+;;  (global-set-key [S-left] 'split-window-horizontally)
+;;  (define-key global-map [S-up] 'split-window-vertically)
+;;  (define-key global-map [S-down] 'delete-other-windows)
+ 
+;;  (global-set-key [right] 'windmove-right)
+;;  (global-set-key [left] 'windmove-left)
+;;  (define-key global-map [up] 'windmove-up)
+;;  (define-key global-map [down] 'windmove-down) 
+ 
+;;  (global-set-key [C-backspace] 'switch-to-buffer)
+;;  (global-set-key [C-delete] '(lambda() (interactive)(kill-buffer (buffer-name)))) 
+ 
+;;  (global-set-key [C-right] 'elscreen-next)
+;;  (global-set-key [C-left] 'elscreen-previous)
+ 
+;;  (global-set-key [C-return] 'find-file)
+;;日付挿入
+(defun my-get-date-gen (form)
+  (insert (format-time-string form)))
+(defun my-get-date ()
+  (interactive)
+  (my-get-date-gen "[%Y-%m-%d]"))
+(defun my-get-time ()
+  (interactive)
+  (my-get-date-gen "%H:%M"))
+(defun my-get-dtime ()
+  (interactive)
+  (my-get-date-gen "[%Y-%m-%d %H:%M]"))
+(global-set-key "\C-c\C-d" 'my-get-date)
+(global-set-key "\C-c\C-t" 'my-get-time)
+(global-set-key "\C-c\ed" 'my-get-dtime)
 
-;;recentf max-list
-(setq recentf-max-saved-items 500)
-(recentf-mode 1)
+;;ファイルを開く時に，カーソルキーだけで，ファイルを選択
+;;カーソル上下で従来のヒストリ。ctrl+P,ctrl+nでファイル名補完
+;; (require 'cycle-mini)
+;; (define-key minibuffer-local-map [up] 'previous-history-element)
+;; (define-key minibuffer-local-completion-map [up] 'previous-history-element)
+;; (define-key minibuffer-local-must-match-map [up] 'previous-history-element)
+;; (define-key minibuffer-local-ns-map [up] 'previous-history-element)
+;; (define-key minibuffer-local-ns-map [down] 'next-history-element)
+;; (define-key minibuffer-local-map [down] 'next-history-element)
+;; (define-key minibuffer-local-completion-map [down] 'next-history-element)
+;; (define-key minibuffer-local-must-match-map [down] 'next-history-element)
+
+;; ;;最大化
+;; (when (eq window-system 'mac)
+;;   (add-hook 'window-setup-hook
+;;             (lambda ()
+;; ;;              (setq mac-autohide-menubar-on-maximize t)
+;;               (set-frame-parameter nil 'fullscreen 'fullboth)
+;;               )))
+
+
+;; (defun mac-toggle-max-window ()
+;;   (interactive)
+;;   (if (frame-parameter nil 'fullscreen)
+;;       (set-frame-parameter nil 'fullscreen nil)
+;;     (set-frame-parameter nil 'fullscreen 'fullboth)))
 
 ;;;;;;;;;;;;;;;;;;;;
 ;; anything
@@ -102,10 +141,8 @@
 (setq anything-sources (list 
 			anything-c-source-recentf
 			anything-c-source-buffers
-			anything-c-source-emacs-commands
-			anything-c-source-files-in-current-dir
-			anything-c-source-file-name-history
 			anything-c-source-bookmarks
+			anything-c-source-file-name-history
 			anything-c-source-locate))
 (define-key anything-map (kbd "C-p") 'anything-previous-line)
 (define-key anything-map (kbd "C-n") 'anything-next-line)
