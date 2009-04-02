@@ -15,15 +15,6 @@ source! ~/.vimperatorrc.local
 "色
 "colorscheme mac
 
-"キー補完 http://d.hatena.ne.jp/tor_ozaki/20081118/1227010697
-"1.  最初は履歴のみの候補
-"2. 2文字戻って検索も補完
-"3. /や.を含む文字を入力しても予め”.”が打ってあるのでurlと判断されることがない
-"   1. しかも検索時には"."はただの検索不可のごみになるので影響が出ない
-set complete=sl
-noremap o :o .<Space>
-noremap t :t .<Space>
-
 "ビープ音を鳴らさずビジュアルベルを使用
 set visualbell
 "ビジュアルベルを無効化
@@ -71,9 +62,6 @@ set wildoptions=auto
 """"""""""""""""""""""""""""""
 " addon
 """"""""""""""""""""""""""""""
-" sbmCommentviewer.js
-map <C-s> :viewSBMComments<CR>
-
 " sorcialbookmark
 map <C-b> :sbm<CR>
 
