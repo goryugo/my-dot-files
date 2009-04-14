@@ -130,9 +130,15 @@ alias df="df -h"
 
 alias su="su -l"
 
+# グローバルエイリアス
+alias -g L='| less'
+alias -g G='| grep'
+alias -g H='| head'
+alias -g T='| tail'
+
 alias emacs="open -a /Applications/Emacs.app"
-alias vi="open -a /Applications/MacVim.app"
-alias vim="vi"
+#alias vi="open -a /Applications/MacVim.app"
+#alias vim="vi"
 
 case "${OSTYPE}" in
 darwin*)
