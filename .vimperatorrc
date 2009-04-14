@@ -55,8 +55,8 @@ cmap <C-f> <Right>
 cmap <C-b> <Left>
 
 " Alt+↑/↓でメニューの表示/非表示
-map <A-Down> :set guioptions+=BTrb<CR>
-map <A-Up> :set guioptions-=Brb<CR>
+map <A-Down> :set guioptions=BTrb<CR>
+map <A-Up> :set guioptions=Brb<CR>
 
 " Exコマンドと検索パターン履歴の記録数
 set history=10000
