@@ -7,7 +7,7 @@ set fencs=iso-2022-jp,utf-8,euc-jp,cp932
 "----------------------------------------------------------
 " タブの画面上での幅
 set tabstop=2
-" タブをスペースに展開しない (expandtab:展開する) 
+" タブをスペースに展開(expandtab:展開する) 
 set expandtab
 " 行数表示
 set nu
