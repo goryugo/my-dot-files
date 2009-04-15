@@ -3,12 +3,16 @@
 colorscheme desert		 " カラースキーム
 set guifont=Monaco:h14		 "font
 set antialias			  " アンチエイリアシング
-set transparency=5	   " 半透明
+if has('gui_macvim')
+  set transparency=5	   " 半透明
+endif
 set guioptions-=T		  " ツールバー削除
 highlight CursorLine ctermbg=black guibg=gray10  " カーソル行の色
 
 " 挿入モード・検索モードでのデフォルトのIME状態設定
-set imdisable      "IMを無効化
+if has('gui_macvim')
+  set imdisable     
+endif
 set iminsert=0 imsearch=0
 
 "日本語入力中のカーソルの色
@@ -23,7 +27,7 @@ source $VIMRUNTIME/menu.vim
 " 様々な箇所を英語に戻す
 lang en_gb
 
-"-------------------------------------------------------------------------------
+"----------------------------------------------------------
 " ウィンドウ
 set sessionoptions+=resize " 行・列を設定する
 set lines=48			   " 行数
@@ -33,14 +37,13 @@ set previewheight=5		" プレビューウィンドウの高さ
 set splitbelow			 " 横分割したら新しいウィンドウは下に
 set splitright			 " 縦分割したら新しいウィンドウは右に
 
-"-------------------------------------------------------------------------------
-" タブを使う
-nnoremap <C-h> bp 
-nnoremap <C-l> bn 
-
+"----------------------------------------------------------
+" タブ
 set showtabline=0  "タブを常に非表示
 map <silent> gw :macaction selectNextWindow:
 map <silent> gW :macaction selectPreviousWindow:
-set backup
-set backupdir=~/Dropbox/bak
+
+
+"ビジュアルモードの選択テキストをクリップボードにfor gvim
+:set guioptions+=a
 
