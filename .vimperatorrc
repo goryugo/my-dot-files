@@ -39,7 +39,7 @@ map b :hbt<Space>
 "set hlsearch
 
 "usキーボードで使いやすく
-nmap ; :
+map ; :
 
 " quickmark
 qmark g http://gmail.com
