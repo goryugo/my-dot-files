@@ -38,6 +38,9 @@ map b :hbt<Space>
 "ページ全体で検索語を強調表示
 "set hlsearch
 
+"usキーボードで使いやすく
+nmap ; :
+
 " quickmark
 qmark g http://gmail.com
 qmark r http://www.google.com/reader/view/
