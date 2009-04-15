@@ -137,7 +137,7 @@ alias -g H='| head'
 alias -g T='| tail'
 
 alias emacs="open -a /Applications/Emacs.app"
-#alias vi="open -a /Applications/MacVim.app"
+alias vi="open -a /Applications/MacVim.app"
 #alias vim="vi"
 
 case "${OSTYPE}" in
