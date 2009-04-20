@@ -39,3 +39,22 @@ map <silent> gW :macaction selectPreviousWindow:
 "ビジュアルモードの選択テキストをクリップボードにfor gvim
 :set guioptions+=a
 
+"-------------------------------------------------------------------------------
+"プラグイン
+"-------------------------------------------------------------------------------
+" FuzzyFinder.vim
+let g:FuzzyFinderOptions.MruFile.max_item = 1000
+let g:FuzzyFinderOptions.MruCmd.max_item = 1000
+nnoremap <Space>f f
+nnoremap <Space>F F
+nnoremap f <Nop>
+nnoremap <silent> fb :<C-u>FuzzyFinderBuffer!<CR>
+nnoremap <silent> ff :<C-u>FuzzyFinderMruFile<CR>
+nnoremap <silent> fc :<C-u>FuzzyFinderMruCmd<CR>
+
+"buftabs
+:let g:buftabs_only_basename=1   " ファイル名のみを表示
+:let g:buftabs_in_statusline=1   " ステータスラインに表示
+:let g:buftabs_active_highlight_group="Visual" "現在のバッファをハイライト
+
+
