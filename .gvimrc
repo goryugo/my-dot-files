@@ -11,21 +11,13 @@ highlight CursorLine ctermbg=black guibg=gray10  " カーソル行の色
 
 " 挿入モード・検索モードでのデフォルトのIME状態設定
 if has('gui_macvim')
-  set imdisable     
+"  set imdisable     
 endif
 set iminsert=0 imsearch=0
 
 "日本語入力中のカーソルの色
 "highlight Cursor guifg=NONE guibg=Green
 highlight CursorIM guifg=NONE guibg=Red
-
-" メニューを英語に戻す
-source $VIMRUNTIME/delmenu.vim
-set langmenu=none
-source $VIMRUNTIME/menu.vim
-
-" 様々な箇所を英語に戻す
-lang en_gb
 
 "----------------------------------------------------------
 " ウィンドウ
