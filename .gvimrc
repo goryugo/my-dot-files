@@ -19,6 +19,10 @@ set iminsert=0 imsearch=0
 "highlight Cursor guifg=NONE guibg=Green
 highlight CursorIM guifg=NONE guibg=Red
 
+filetype indent off            " ファイルタイプによるインデント
+filetype plugin off            " ファイルタイプごとのプラグイン
+
+
 "----------------------------------------------------------
 " ウィンドウ
 set sessionoptions+=resize " 行・列を設定する
