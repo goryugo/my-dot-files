@@ -215,3 +215,4 @@ esac
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
 
 export GISTY_DIR="$HOME/Dropbox/gists/gistnum"
+export GIT_EDITOR=vim
