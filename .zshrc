@@ -136,9 +136,9 @@ alias -g G='| grep'
 alias -g H='| head'
 alias -g T='| tail'
 
-alias emacs="open -a /Applications/Emacs.app"
-alias vi="open -a /Applications/MacVim.app"
-#alias vim="vi"
+#alias emacs="open -a /Applications/Emacs.app"
+#alias vi="open -a /Applications/MacVim.app"
+alias vi="vim"
 
 case "${OSTYPE}" in
 darwin*)
