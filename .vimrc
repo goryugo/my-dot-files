@@ -14,17 +14,6 @@ set statusline=%<%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}\ %F%=%v\ %l/
 "----------------------------------------------------------
 "基本設定
 "----------------------------------------------------------
-set autoread                   " 他で書き換えられたら自動で読み直す
-set backup
-set backupdir=~/Dropbox/bak    " バックアップの場所
-set hidden                     " 編集中でも他のファイルを開けるようにする
-set backspace=indent,eol,start " バックスペースでなんでも消せるように
-set vb t_vb=                   " ビープをならさない
-set whichwrap=b,s,h,l,<,>,[,]  " カーソルを行頭、行末で止まらないようにする
-set showcmd                    " コマンドをステータス行に表示
-filetype indent off            " ファイルタイプによるインデント
-filetype plugin off            " ファイルタイプごとのプラグイン
-
 "----------------------------------------------------------
 "表示
 "----------------------------------------------------------
@@ -133,18 +122,4 @@ nmap ; :
 "-------------------------------------------------------------------------------
 "YankRing動かない?
 
-"buftabs
-:let g:buftabs_only_basename=1   " ファイル名のみを表示
-:let g:buftabs_in_statusline=1   " ステータスラインに表示
-:let g:buftabs_active_highlight_group="Visual" "現在のバッファをハイライト
-
-" FuzzyFinder.vim
-let g:FuzzyFinderOptions.MruFile.max_item = 1000
-let g:FuzzyFinderOptions.MruCmd.max_item = 1000
-nnoremap <Space>f f
-nnoremap <Space>F F
-nnoremap f <Nop>
-nnoremap <silent> fb :<C-u>FuzzyFinderBuffer!<CR>
-nnoremap <silent> ff :<C-u>FuzzyFinderMruFile<CR>
-nnoremap <silent> fc :<C-u>FuzzyFinderMruCmd<CR>
 
