@@ -10,17 +10,14 @@ set guioptions-=T		  " ツールバー削除
 highlight CursorLine ctermbg=black guibg=gray10  " カーソル行の色
 
 " 挿入モード・検索モードでのデフォルトのIME状態設定
-if has('gui_macvim')
-"  set imdisable     
-endif
 set iminsert=0 imsearch=0
 
 "日本語入力中のカーソルの色
 "highlight Cursor guifg=NONE guibg=Green
 highlight CursorIM guifg=NONE guibg=Red
 
-filetype indent off            " ファイルタイプによるインデント
-filetype plugin off            " ファイルタイプごとのプラグイン
+filetype indent on " ファイルタイプによるインデント
+filetype plugin on " ファイルタイプごとのプラグイン
 
 
 "----------------------------------------------------------
