@@ -18,6 +18,7 @@ set autoread                   " 他で書き換えられたら自動で読み�
 set backup
 set backupdir=~/Dropbox/bak    " バックアップの場所
 set hidden                     " 編集中でも他のファイルを開けるようにする
+set noswapfile
 set backspace=indent,eol,start " バックスペースでなんでも消せるように
 set vb t_vb=                   " ビープをならさない
 set whichwrap=b,s,h,l,<,>,[,]  " カーソルを行頭、行末で止まらないようにする
@@ -26,8 +27,9 @@ set showcmd                    " コマンドをステータス行に表示
 "表示
 "----------------------------------------------------------
 "タブの画面上での幅
+set shiftwidth=2
 set tabstop=2
-set softtabstop=0
+set softtabstop=2
 " タブをスペースに展開(expandtab:展開する) 
 set expandtab
 " 行数表示
@@ -124,6 +126,21 @@ nmap ; :
 :cnoremap <Esc><C-B>	<S-Left>
 " Alt+Ctrl+Fで次の単語へ移動
 :cnoremap <Esc><C-F>	<S-Right> 
+
+"------------------------------------------------------------
+"テンプレートファイル
+"------------------------------------------------------------
+augroup SkeletonAu
+    autocmd!
+    autocmd BufNewFile *.html 0r $HOME/Dropbox/templates/skelton.html
+    autocmd BufNewFile *.cgi 0r $HOME/Dropbox/templates/skelton.cgi
+    autocmd BufNewFile *.pl 0r $HOME/Dropbox/templates/skelton.cgi
+augroup END
+
+"------------------------------------------------------------
+"コンパイラ
+"------------------------------------------------------------
+autocmd FileType perl,cgi :compiler perl  
 
 "-------------------------------------------------------------------------------
 "プラグイン
