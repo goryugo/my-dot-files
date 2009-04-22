@@ -29,6 +29,7 @@ set cmdheight=1			" コマンドラインの高さ
 set previewheight=5		" プレビューウィンドウの高さ
 set splitbelow			 " 横分割したら新しいウィンドウは下に
 set splitright			 " 縦分割したら新しいウィンドウは右に
+set guioptions-=rl  "スクロールバー非表示
 "----------------------------------------------------------
 " タブ
 set showtabline=0  "タブを常に非表示
