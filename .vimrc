@@ -138,6 +138,20 @@ augroup SkeletonAu
 augroup END
 
 "------------------------------------------------------------
+"ファイルタイプ関連付け
+"------------------------------------------------------------
+augroup filetypedetect
+  autocmd!
+  autocmd BufNewFile,BufRead clmemo.txt set filetype=changelog
+augroup END
+
+"------------------------------------------------------------
+"ChangeLog
+"------------------------------------------------------------
+let g:changelog_username="Ryusuke Goto  <goryugo33@gmail.com>"
+let g:changelog_timeformat="%Y-%m-%d"
+
+"------------------------------------------------------------
 "コンパイラ
 "------------------------------------------------------------
 autocmd FileType perl,cgi :compiler perl  
