@@ -23,13 +23,12 @@ filetype plugin on " ファイルタイプごとのプラグイン
 "----------------------------------------------------------
 " ウィンドウ
 set sessionoptions+=resize " 行・列を設定する
-set lines=48			   " 行数
-set columns=160			" 横幅
+set lines=1000                      " 行数
+set columns=1000                        " 横幅
 set cmdheight=1			" コマンドラインの高さ
 set previewheight=5		" プレビューウィンドウの高さ
 set splitbelow			 " 横分割したら新しいウィンドウは下に
 set splitright			 " 縦分割したら新しいウィンドウは右に
-
 "----------------------------------------------------------
 " タブ
 set showtabline=0  "タブを常に非表示
