@@ -135,7 +135,7 @@ augroup END
 "------------------------------------------------------------
 "ファイルタイプ関連付け
 "------------------------------------------------------------
-autocmd BufNewFile,BufRead clmemo.txt set filetype=changelog
+autocmd BufNewFile,BufRead clmemo.txt set filetype=changelog "for changelog_memo
 
 "------------------------------------------------------------
 "ChangeLog
