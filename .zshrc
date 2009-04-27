@@ -1,4 +1,4 @@
-export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
+export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin/:$PATH
 export MANPATH=/opt/local/man:$MANPATH
 # users generic .zshrc file for zsh(1)
 
