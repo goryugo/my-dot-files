@@ -136,6 +136,7 @@ augroup END
 "ファイルタイプ関連付け
 "------------------------------------------------------------
 autocmd BufNewFile,BufRead clmemo.txt set filetype=changelog "for changelog_memo
+autocmd BufNewFile,BufRead *.cgi set filetype=perl "for perl CGI program
 
 "------------------------------------------------------------
 "ChangeLog
