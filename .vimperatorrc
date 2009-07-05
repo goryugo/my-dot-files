@@ -51,6 +51,7 @@ qmark d http://d.hatena.ne.jp/goryugo/
 qmark c http://www.drk7.jp/pub/js/cpanmala/
 qmark l http://reader.livedoor.com/reader/
 qmark m http://www.google.co.jp/maps/
+qmark y http://www.youtube.com/?gl=JP&hl=ja
 
 " コマンドモードでの操作
 cmap <C-n> <Tab>
@@ -59,7 +60,7 @@ cmap <C-f> <Right>
 cmap <C-b> <Left>
 
 " Alt+↑/↓でメニューの表示/非表示
-map <A-Down> :set guioptions=BTrb<CR>
+map <A-Down> :set guioptions=mBTrb<CR>
 map <A-Up> :set guioptions=Brb<CR>
 
 " Exコマンドと検索パターン履歴の記録数
