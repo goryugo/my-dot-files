@@ -11,3 +11,5 @@
 [github]
 	user = goryugo
 	token = 6b1fa575116374ffb794919febc450d3
+[core]
+	editor = vim -c \"set fenc=utf-8\"
