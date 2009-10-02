@@ -54,6 +54,8 @@ qmark m http://www.google.co.jp/maps/
 qmark y http://www.youtube.com/?gl=JP&hl=ja
 qmark t http://twitter.com/
 qmark i http://www.instapaper.com/u
+qmark x http://mixi.jp/home.pl
+
 " コマンドモードでの操作
 cmap <C-n> <Tab>
 cmap <C-p> <S-Tab>
