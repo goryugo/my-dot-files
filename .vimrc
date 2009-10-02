@@ -153,3 +153,23 @@ autocmd FileType perl,cgi :compiler perl
 "YankRing動かない?
 
 
+"--------------------
+"howm
+"--------------------
+if has('gui')
+  "howm用ランタイムパス
+  set runtimepath+=/Users/goryugo33/Dropbox/Document/qfixapp
+  "キーマップリーダー
+  let QFixHowm_Key = 'g'
+
+  "howm_dirはファイルを保存したいディレクトリを設定。
+  let howm_dir             = '~/Dropbox/howm'
+  let howm_filename        = '%Y/%m/%Y-%m-%d-%H%M%S.howm'
+  let howm_fileencoding    = 'utf-8'
+  let howm_fileformat      = 'unix'
+  "howmファイル読込の際、howm_fileencodingに強制設定する/しない
+  let QFixHowm_ForceEncoding = 0
+  "タイムスタンプを更新日時に変更
+  let QFixHowm_SaveTime   = 1
+endif
+
