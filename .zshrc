@@ -169,7 +169,6 @@ esac
 #my alias
 alias dot="cd ~/Dropbox/dot_files"
 alias cpan="sudo cpan"
-alias port="sudo port"
 alias diff="colordiff"
 alias less='/Applications/MacVim.app/Contents/Resources/vim/runtime/macros/less.sh'
 ## terminal configuration
