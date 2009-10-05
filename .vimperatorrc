@@ -75,12 +75,12 @@ set wildoptions=auto
 """"""""""""""""""""""""""""""
 " addon
 """"""""""""""""""""""""""""""
-"feedSomeKeys.js
-autocmd LocationChange .* :fmapc
-autocmd LocationChange reader\.livedoor\.com/reader :fmap j k s a p o v c t g i <Space> <S-Space> z  b< > t
-autocmd LocationChange fastladder\.com/reader :fmap j k s a p o v c t g <Space> <S-Space> z b < > t
-autocmd LocationChange mail\.google\.com/mail :fmap -depth 4 c / j k n p o u e x s r a y # [ ] z ? gi gs gt gd ga gc
-autocmd LocationChange www\.google\.com/reader :fmap! -vkey j k n p m s t v y cA A r S N P X O gh ga gs gt gu u / ? <Space>
+"feedSomeKeys.js 10/05リカバリ後OFFなんかエラーが出る
+"autocmd LocationChange .* :fmapc
+"autocmd LocationChange reader\.livedoor\.com/reader :fmap j k s a p o v c t g i <Space> <S-Space> z  b< > t
+"autocmd LocationChange fastladder\.com/reader :fmap j k s a p o v c t g <Space> <S-Space> z b < > t
+"autocmd LocationChange mail\.google\.com/mail :fmap -depth 4 c / j k n p o u e x s r a y # [ ] z ? gi gs gt gd ga gc
+"autocmd LocationChange www\.google\.com/reader :fmap! -vkey j k n p m s t v y cA A r S N P X O gh ga gs gt gu u / ? <Space>
 
 " copy.js
 javascript <<EOM
