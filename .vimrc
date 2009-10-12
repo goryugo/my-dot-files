@@ -135,7 +135,7 @@ augroup END
 "------------------------------------------------------------
 autocmd BufNewFile,BufRead clmemo.txt set filetype=changelog "for changelog_memo
 autocmd BufNewFile,BufRead *.cgi set filetype=perl "for perl CGI program
-autocmd BufNewFile,BufRead .vimrperatorrc set filetype=.vim "for .vimperatorrc
+autocmd BufNewFile,BufRead .vimperatorrc set filetype=.vim "for .vimperatorrc
 
 "------------------------------------------------------------
 "ChangeLog
@@ -170,7 +170,7 @@ if has('gui')
   let howm_fileformat      = 'unix'
   "howmファイル読込の際、howm_fileencodingに強制設定する/しない
   let QFixHowm_ForceEncoding = 0
-  "タイムスタンプを更新日時に変更
-  let QFixHowm_SaveTime   = 1
+  "タイムスタンプを更新日時に変更（カーソルがあるエントリの日時を変更）
+  let QFixHowm_SaveTime   = 2
 endif
 
