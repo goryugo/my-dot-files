@@ -75,6 +75,11 @@ Gmailとかlivedoor ReaderとかGreasemonkeyでキーを割り当てている場
 :autocmd LocationChange 'www\.google\.com/calendar/' :fmap! -vkey -event keydown t a d w m x c e <Del> / + q s ?
 ||<
 
+=== FriendFeed の場合 ===
+>||
+:autocmd LocationChange 'friendfeed\.com/' :fmap! -vkey -event keydown p P q / gh gd gm gb
+||<
+
 Greasemonkey LDRizeの場合などにも使用可
 ]]></detail>
 </VimperatorPlugin>;
@@ -206,7 +211,14 @@ function replaceUserMap(origKey, feedKey, useVkey, eventName){
                                 origMap.names.map(function(n) n),
                                 origMap.description,
                                 origMap.action,
-                                { flags:origMap.flags, rhs:origMap.rhs, noremap:origMap.noremap });
+                                {
+                                    flags:origMap.flags,
+                                    rhs:origMap.rhs,
+                                    noremap:origMap.noremap,
+                                    count: origMap.cout,
+                                    arg: origMap.arg,
+                                    motion: origMap.motion
+                                });
             origMaps.push(clone);
         }
     }
@@ -216,7 +228,7 @@ function replaceUserMap(origKey, feedKey, useVkey, eventName){
             for (var i=0; i<count; i++){
                 feedKeyIntoContent(feedKey, useVkey, eventName);
             }
-        }, { flags:Mappings.flags.COUNT, rhs:feedKey, noremap:true });
+        }, { flags:(Mappings.flags ? Mappings.flags.COUNT : null), rhs:feedKey, noremap:true, count:true });
     addUserMap(map);
     if (feedMaps.some(function(fmap){
         if (fmap.names[0] != origKey) return false;
@@ -238,7 +250,9 @@ function destroy(){
     feedMaps = [];
 }
 function addUserMap(map){
-    mappings.addUserMap(map.modes, map.names, map.description, map.action, { flags:map.flags,noremap:map.noremap,rhs:map.rhs });
+    mappings.addUserMap(map.modes, map.names, map.description, map.action, {
+        flags:map.flags,noremap:map.noremap,rhs:map.rhs,count:map.count,arg:map.arg,motion:map.motion
+    });
 }
 function parseKeys(keys){
     var matches = /^\d+(?=\D)/.exec(keys);

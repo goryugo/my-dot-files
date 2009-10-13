@@ -4,7 +4,7 @@ var PLUGIN_INFO =
 <description>Replace default search to migemo.</description>
 <description lang="ja">標準の検索を XUL/Migemo に置き換えます</description>
 <minVersion>2.0pre</minVersion>
-<maxVersion>2.0</maxVersion>
+<maxVersion>2.1</maxVersion>
 <updateURL>http://svn.coderepos.org/share/lang/javascript/vimperator-plugins/trunk/migemo-find.js</updateURL>
 <author mail="hotchpotch@gmail.com" homepage="http://d.hatena.ne.jp/secondlife/">Yuichi Tateno</author>
 <license>MIT</license>
@@ -52,6 +52,10 @@ liberator.plugins.migemoFind = (function() {
         return;
     }
 
+    // for 2.1pre
+    if (typeof search == "undefined") {
+	search = finder;
+    }
     search.migemo = XMigemoFind.wrappedJSObject;
     search.migemo.target = window.gBrowser;
 
