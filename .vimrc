@@ -17,6 +17,18 @@ set whichwrap=b,s,h,l,<,>,[,]  " カーソルを行頭、行末で止まらな�
 set showcmd                    " コマンドをステータス行に表示
 set clipboard+=unnamed        " 無名レジスタに入るデータを、*レジスタにも入れる。
 set clipboard+=autoselect     " ビジュアルモードの選択テキストをクリップボードに
+set syntax=ON
+set smartindent
+set smartcase
+set expandtab
+set hlsearch
+set ignorecase
+set incsearch
+set nocompatible
+set number
+set shiftwidth=2
+set tabstop=2
+set wildmenu
 
 "----------------------------------------------------------
 "ステータスライン
