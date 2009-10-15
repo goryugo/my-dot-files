@@ -4,6 +4,7 @@ colorscheme desert		 " カラースキーム
 set guifont=Monaco:h14		 "font
 set antialias			  " アンチエイリアシング
 if has('gui_macvim')
+  nnoremap / g/ " デフォルトでmigemo検索
   set transparency=5	   " 半透明
 endif
 set guioptions-=T		  " ツールバー削除
